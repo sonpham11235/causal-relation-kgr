@@ -20,8 +20,7 @@ def ground_truth():
     graph = utility.add_nodes(graph, "DrivQuality", "Accident")
     graph = utility.add_nodes(graph, "Accident", "ThisCarDam")
 
-    # visualize the graph
-    utility.visualize_graph(graph, "Car Insurance Claims Graph")
+    return graph
 
 def noisy():
     gt = ground_truth()

@@ -5,13 +5,13 @@ def new_directed_graph():
     """Create a new directed graph."""
     return nx.DiGraph()
 
-def add_nodes(graph: nx.DiGraph, head: str, tail: str, weight: float = 1.0) -> nx.DiGraph:
+def add_nodes(graph: nx.DiGraph, head: str, tail: str) -> nx.DiGraph:
     """Add nodes to the graph."""
     if (head not in graph.nodes):
         graph.add_node(head)
     if (tail not in graph.nodes):
         graph.add_node(tail)
-    graph.add_edge(head, tail, weight)
+    graph.add_edge(head, tail)
     return graph
 
 def visualize_graph(graph: nx.DiGraph, title: str = "Directed Graph") -> None:
