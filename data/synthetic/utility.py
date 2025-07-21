@@ -8,8 +8,13 @@ def generate_covariance_from_adjacency(adj_matrix):
     for i in range(n):
         for j in range(i+1, n):
             if adj_matrix[i, j] == 1:
-                cov_matrix[i, j] = 0.8
-                cov_matrix[j, i] = 0.8
+                val = random.uniform(0.8, 0.9)
+                cov_matrix[i, j] = val
+                cov_matrix[j, i] = val
+            else:
+                val = random.uniform(0.01, 0.2)
+                cov_matrix[i, j] = val
+                cov_matrix[j, i] = val
     return cov_matrix
 
 def generate_joint_chi_squared_data(adj_matrix, df=2, n_samples=1000):
